@@ -67,7 +67,7 @@
 					<!-- MainClass in mainfest make a executable jar -->
 					<archive>
 						<manifest>
-							<mainClass>cn.xvkang.udpaudio.udpserver.UdpServer</mainClass>
+							<mainClass>cn.xvkang.udpaudio.stackoverflow.UdpClientSpeaker</mainClass>
 						</manifest>
 					</archive>
 

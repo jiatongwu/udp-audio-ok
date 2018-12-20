@@ -38,11 +38,16 @@ public class Sender {
 			speakers.start();
 
 			// Configure the ip and port
-			String hostname = "localhost";
+			String hostname = "wu2.host.funtoo.org";
 			int port = 5555;
-
-			InetAddress address = InetAddress.getByName(hostname);
 			DatagramSocket socket = new DatagramSocket();
+			InetAddress address = InetAddress.getByName(hostname);
+			String message="listener";
+
+			DatagramPacket sendMessage = new DatagramPacket(message.getBytes("UTF-8"), message.getBytes("UTF-8").length, address, port);
+			socket.send(sendMessage);
+			socket.send(sendMessage);
+			
 			byte[] buffer = new byte[1024];
 			for (;;) {
 				numBytesRead = microphone.read(data, 0, CHUNK_SIZE);
