@@ -11,7 +11,7 @@ public class UdpServer {
 	public static void main(String[] args) throws IOException {
 		ConcurrentHashMap<String, InetAddress> map = new ConcurrentHashMap<>();
 		DatagramSocket serverSocket = new DatagramSocket(9876);
-		byte[] receiveData = new byte[50000];
+		byte[] receiveData = new byte[20000];
 		
 		while (true) {
 			System.out.println("read one package");
@@ -62,7 +62,7 @@ public class UdpServer {
 //  				sd.start();
 //  				// 创建播放进程
 //  				Thread t2 = new Thread(() -> {
-//  					byte btstmp[] = new byte[50000];
+//  					byte btstmp[] = new byte[20000];
 //  					try {
 //  						int cntTmp;
 //  						// 读取数据到缓存数据

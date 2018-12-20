@@ -33,7 +33,7 @@ public class AudioRecord {
 		Thread t1 = new Thread(() -> {
 			// ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			// 定义存放录音的字节数组,作为缓冲区
-			byte bts[] = new byte[50000];
+			byte bts[] = new byte[20000];
 			try {
 				System.out.println("ok3");
 				// stopflag = false;
@@ -52,7 +52,7 @@ public class AudioRecord {
 //						});
 //						t2.start();
 						 // DatagramSocket clientSocket = new DatagramSocket();
-						  InetAddress IPAddress = InetAddress.getByName("47.92.226.141");
+						  InetAddress IPAddress = InetAddress.getByName("172.97.103.33");
 						 // InetAddress IPAddress = InetAddress.getByName("127.0.0.1");
 					      byte[] sendData =Arrays.copyOf(bts, cnt);
 					      DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
@@ -72,7 +72,7 @@ public class AudioRecord {
 //							sd.start();
 //							// 创建播放进程
 //							Thread t2 = new Thread(() -> {
-//								byte btstmp[] = new byte[50000];
+//								byte btstmp[] = new byte[20000];
 //								try {
 //									int cntTmp;
 //									// 读取数据到缓存数据

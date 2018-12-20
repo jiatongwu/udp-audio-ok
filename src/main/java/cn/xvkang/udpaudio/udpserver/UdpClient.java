@@ -15,7 +15,7 @@ import javax.sound.sampled.SourceDataLine;
 public class UdpClient {
 	public static void main(String[] args) throws IOException {
 		DatagramSocket clientSocket = new DatagramSocket();
-		 InetAddress IPAddress = InetAddress.getByName("47.92.226.141");
+		 InetAddress IPAddress = InetAddress.getByName("172.97.103.33");
 		//InetAddress IPAddress = InetAddress.getByName("127.0.0.1");
 		byte[] sendData = new byte[1];
 
@@ -27,7 +27,7 @@ public class UdpClient {
 //			DatagramPacket sendPacket2 = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
 //			clientSocket.send(sendPacket2);
 
-			byte[] receiveData = new byte[50000];
+			byte[] receiveData = new byte[20000];
 			DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
 			clientSocket.receive(receivePacket);
 			byte[] array = receivePacket.getData();
@@ -47,7 +47,7 @@ public class UdpClient {
 				sd.start();
 				// 创建播放进程
 				Thread t2 = new Thread(() -> {
-					byte btstmp[] = new byte[50000];
+					byte btstmp[] = new byte[20000];
 					try {
 						int cntTmp;
 						// 读取数据到缓存数据
