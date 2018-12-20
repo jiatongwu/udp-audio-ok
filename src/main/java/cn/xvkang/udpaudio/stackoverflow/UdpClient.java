@@ -9,12 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.SourceDataLine;
-import javax.sound.sampled.TargetDataLine;
 
 public class UdpClient {
 	public static class Client {
@@ -25,26 +20,26 @@ public class UdpClient {
 	public static void main(String[] args) throws LineUnavailableException {
 		ConcurrentHashMap<String, List<Client>> map = new ConcurrentHashMap<>();
 
-		AudioFormat format = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, 44100, 16, 2, 4, 44100, true);
-		TargetDataLine microphone;
-		SourceDataLine speakers;
-		microphone = AudioSystem.getTargetDataLine(format);
-
-		DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
-		microphone = (TargetDataLine) AudioSystem.getLine(info);
-		microphone.open(format);
+//		AudioFormat format = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, 44100, 16, 2, 4, 44100, true);
+//		TargetDataLine microphone;
+//		SourceDataLine speakers;
+//		microphone = AudioSystem.getTargetDataLine(format);
+//
+//		DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
+//		microphone = (TargetDataLine) AudioSystem.getLine(info);
+//		microphone.open(format);
 
 		// ByteArrayOutputStream out = new ByteArrayOutputStream();
 		int numBytesRead;
 		int CHUNK_SIZE = 1024;
-		byte[] data = new byte[microphone.getBufferSize() / 5];
-		microphone.start();
-
-		int bytesRead = 0;
-		DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class, format);
-		speakers = (SourceDataLine) AudioSystem.getLine(dataLineInfo);
-		speakers.open(format);
-		speakers.start();
+//		byte[] data = new byte[microphone.getBufferSize() / 5];
+//		microphone.start();
+//
+//		int bytesRead = 0;
+//		DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class, format);
+//		speakers = (SourceDataLine) AudioSystem.getLine(dataLineInfo);
+//		speakers.open(format);
+//		speakers.start();
 
 		// String hostname = "localhost";
 		// int port = 5555;
